@@ -13,6 +13,7 @@ public class SalesCommissionCalc {
     private double advance;
     private double pay;
 
+    //Default contructor
     public SalesCommissionCalc() {
         this.sales = 0.0;
         this.rate = 0;
@@ -21,6 +22,7 @@ public class SalesCommissionCalc {
         this.pay = 0.0;
     }
 
+    //Parameterized Constructor
     public SalesCommissionCalc(double sales, double advance) {
         this.sales = sales;
         this.advance = advance;
@@ -69,6 +71,7 @@ public class SalesCommissionCalc {
         return rate;
     }
 
+    //Calculate commission from sales
     public void calculateSalesCommission() {
         double comm = getSales() * getRate()/ 100;
         setCommission(comm);
@@ -76,7 +79,8 @@ public class SalesCommissionCalc {
         setPay(pay);
     }
 
-    public void displayCommission() {
+    //Display gross pay to the user
+    public void displayPay() {
         Locale dollar = new Locale("en", "US");
         DecimalFormat decformat = new DecimalFormat("#.##");
         NumberFormat df = NumberFormat.getCurrencyInstance(dollar);
@@ -95,6 +99,7 @@ public class SalesCommissionCalc {
         }
     }
 
+    //Get Commission percentage value from user based on sales
     private void getCommissionRateFromSales() {
         int rate = 0;
         double sale = getSales();
