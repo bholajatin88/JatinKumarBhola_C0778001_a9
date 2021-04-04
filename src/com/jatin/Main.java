@@ -22,6 +22,11 @@ public class Main {
             try {
                 //get input from the user
                 String input = JOptionPane.showInputDialog(selectMessage);
+                if(input==null) {
+                    JOptionPane.showMessageDialog(null, "Invalid input. "
+                            + "Must provide value for variable " + variable);
+                    continue;
+                }
                 //validate value entered by user
                 val = Double.parseDouble(input);
                 if(val <= 0) {
